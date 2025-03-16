@@ -1,6 +1,8 @@
 import express from 'express';
 import { PORT } from './config/serverConfig.js';
 import apiRouter from './route/index.js';
+import { writeLogsToFile, loadLogsFromFile } from './service/log.service.js';
+import { sequelize, initializeDatabase } from './config/dbConfig.js';
 
 const app = express();
 
@@ -11,30 +13,33 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api', apiRouter);
 
-// Starting the express server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// Initialize database and start server
+const startServer = async () => {
+    await initializeDatabase();
+    await sequelize.sync({ force: true }); // Synchronize models
+    await loadLogsFromFile(); // Load data from file
+
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+};
+
+startServer();
+
+const shutdown = async () => {
+    console.log("Server is shutting down...");
+    try {
+        await writeLogsToFile();
+        console.log("Logs Saved on disk Successfully"); 
+    } catch (error) {
+        console.error("Error during shutdown:", error);
+    } finally {
+        // Ensure process exits after logs are written
+        process.exit(0); 
+    }
+};
 
 // Handling server shutdown gracefully
-process.on('SIGINT', () => {
-    console.log("Server is shutting down...");
-    try {
-        console.log("Successfully persisted logs and closed databases");
-        process.exit(0);
-    } catch (error) {
-        console.error("Error during shutdown:", error);
-        process.exit(1);
-    }
-});
-
-process.on('SIGTERM', () => {
-    console.log("Server is shutting down...");
-    try {
-        console.log("Successfully persisted logs and closed databases");
-        process.exit(0);
-    } catch (error) {
-        console.error("Error during shutdown:", error);
-        process.exit(1);
-    }
-});
+process.on('SIGINT', shutdown);
+process.on('SIGTERM', shutdown);
+process.on('exit', shutdown); // Handle unexpected exits

@@ -1,0 +1,209 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2025-03-16T05:39:29.075Z",
+    "algorithm": "Binary Search",
+    "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+    "output": "2",
+    "status": "Element found",
+    "execution_time_ms": 0.0737
+  },
+  {
+    "id": 2,
+    "timestamp": "2025-03-16T05:43:55.793Z",
+    "algorithm": "Binary Search",
+    "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+    "output": "2",
+    "status": "Element found",
+    "execution_time_ms": 0.0821
+  },
+  {
+    "id": 3,
+    "timestamp": "2025-03-16T05:40:52.053Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.2884
+  },
+  {
+    "id": 4,
+    "timestamp": "2025-03-16T05:44:34.269Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.0624
+  },
+  {
+    "id": 5,
+    "timestamp": "2025-03-16T05:39:31.775Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.2162
+  },
+  {
+    "id": 6,
+    "timestamp": "2025-03-16T05:43:58.094Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.1836
+  },
+  {
+    "id": 7,
+    "timestamp": "2025-03-16T05:40:48.459Z",
+    "algorithm": "Binary Search",
+    "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+    "output": "2",
+    "status": "Element found",
+    "execution_time_ms": 0.1094
+  },
+  {
+    "id": 8,
+    "timestamp": "2025-03-16T05:40:55.437Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.0662
+  },
+  {
+    "id": 9,
+    "timestamp": "2025-03-16T05:39:34.077Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.0772
+  },
+  {
+    "id": 10,
+    "timestamp": "2025-03-16T05:44:02.736Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.1003
+  },
+  {
+    "id": 11,
+    "timestamp": "2025-03-16T05:46:17.855Z",
+    "algorithm": "Binary Search",
+    "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+    "output": "2",
+    "status": "Element found",
+    "execution_time_ms": 0.0788
+  },
+  {
+    "id": 12,
+    "timestamp": "2025-03-16T05:46:20.896Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.1348
+  },
+  {
+    "id": 13,
+    "timestamp": "2025-03-16T05:46:24.045Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.095
+  },
+  {
+    "id": 14,
+    "timestamp": "2025-03-16T06:36:28.189Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.234
+  },
+  {
+    "id": 15,
+    "timestamp": "2025-03-16T06:36:31.117Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.0812
+  },
+  {
+    "id": 16,
+    "timestamp": "2025-03-16T06:42:56.807Z",
+    "algorithm": "Binary Search",
+    "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+    "output": "2",
+    "status": "Element found",
+    "execution_time_ms": 0.2271
+  },
+  {
+    "id": 17,
+    "timestamp": "2025-03-16T06:43:00.175Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.1713
+  },
+  {
+    "id": 18,
+    "timestamp": "2025-03-16T12:17:05.047Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.5344
+  },
+  {
+    "id": 19,
+    "timestamp": "2025-03-16T12:17:07.785Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.2986
+  },
+  {
+    "id": 20,
+    "timestamp": "2025-03-16T13:15:02.923Z",
+    "algorithm": "Binary Search",
+    "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+    "output": "2",
+    "status": "Element found",
+    "execution_time_ms": 0.117446
+  },
+  {
+    "id": 21,
+    "timestamp": "2025-03-16T13:15:05.446Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.116325
+  },
+  {
+    "id": 22,
+    "timestamp": "2025-03-16T13:21:13.262Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.1542
+  },
+  {
+    "id": 23,
+    "timestamp": "2025-03-16T13:21:59.412Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.263612
+  }
+]

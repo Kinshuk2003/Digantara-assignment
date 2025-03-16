@@ -1,29 +1,16 @@
-import sqlite3 from 'sqlite3';
+import { Sequelize } from 'sequelize';
 
-// In-memory DB (fast, temporary storage)
-export const memoryDb = new sqlite3.Database(':memory:', (err) => {
-    if (err) console.error("Error opening in-memory DB:", err);
-    else {
-        console.log("Connected to in-memory SQLite database.");
-
-        // Create logs table in the database
-        const createTableQuery = `
-            CREATE TABLE IF NOT EXISTS logs (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                timestamp TEXT,
-                algorithm TEXT,
-                input TEXT,
-                output TEXT,
-                status TEXT,
-                execution_time_ms REAL
-            )`;
-
-        memoryDb.run(createTableQuery, (err) => {
-            if (err) {
-                console.error("Error creating logs table:", err);
-            } else {
-                console.log("Logs table created successfully.");
-            }
-        });
-    }
+export const sequelize = new Sequelize({
+    dialect: 'sqlite',
+    storage: ':memory:', // Use in-memory storage
+    logging: false, // Disable logging
 });
+
+export const initializeDatabase = async () => {
+    try {
+        await sequelize.authenticate();
+        console.log('Connection to SQLite has been established successfully.');
+    } catch (error) {
+        console.error('Unable to connect to the database:', error);
+    }
+};
