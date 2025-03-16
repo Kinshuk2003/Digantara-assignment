@@ -1,6 +1,6 @@
 # Digantara Assignment
 
-This is a Node.js application that provides APIs for various algorithms like Breadth First Search, Sorting, and Searching. The application logs the algorithm execution details like input, output, status, execution time, etc into a in-memory sqlite database and provides an API to fetch the logs. The logs are saved to a file `logs/logs.json` when the server is stopped and reloaded when the server is started.
+This is a Node.js application that provides APIs for various algorithms like Breadth First Search, Sorting, and Searching.
 
 A live version of the API is hosted at `http://digantara.centralindia.cloudapp.azure.com`.
 
@@ -158,6 +158,8 @@ A postman collection is also available in the `docs` directory.
     ]
 }
 ```
+### Logging
+The application logs the algorithm execution details like input, output, status, execution time, etc into a in-memory sqlite database and provides an API endpoint `/api/logs` to fetch the logs. The logs are saved to a file `logs/logs.json` when the server is stopped. Logs are loaded back into the database from the file when the server is restarted.
 
 ### Validation Errors
 All endpoints validate the input data and return a `400 Bad Request` status with a detailed error message if validation fails.
