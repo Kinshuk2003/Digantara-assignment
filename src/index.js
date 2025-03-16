@@ -1,6 +1,8 @@
 import express from 'express';
 import { PORT } from './config/serverConfig.js';
 import apiRouter from './route/index.js';
+import { memoryDb } from './config/dbConfig.js';
+import fs from 'fs';
 
 const app = express();
 
@@ -16,25 +18,40 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-// Handling server shutdown gracefully
-process.on('SIGINT', () => {
-    console.log("Server is shutting down...");
-    try {
-        console.log("Successfully persisted logs and closed databases");
-        process.exit(0);
-    } catch (error) {
-        console.error("Error during shutdown:", error);
-        process.exit(1);
-    }
-});
+// Function to write logs to a file
+const persistLogsToFile = () => {
+    return new Promise((resolve, reject) => {
+        memoryDb.all("SELECT * FROM logs", (err, rows) => {
+            if (err) {
+                console.error("Error fetching logs:", err);
+                reject(err);
+            } else {
+                fs.writeFileSync('logs.json', JSON.stringify(rows, null, 2));
+                console.log("Logs saved to logs.json");
+                resolve();
+            }
+        });
+    });
+};
 
-process.on('SIGTERM', () => {
+const shutdown = async () => {
     console.log("Server is shutting down...");
     try {
-        console.log("Successfully persisted logs and closed databases");
-        process.exit(0);
+        await persistLogsToFile();
+        console.log("Logs Saved on disk Successfully"); 
+        // Ensure all processes complete before shutting down
+        setTimeout(() => {
+            process.exit(0);
+        }, 1000);
     } catch (error) {
         console.error("Error during shutdown:", error);
-        process.exit(1);
+        // Ensure all processes complete before shutting down
+        setTimeout(() => {
+            process.exit(1);
+        }, 1000);
     }
-});
+};
+
+// Handling server shutdown gracefully
+process.on('SIGINT', shutdown);
+process.on('SIGTERM', shutdown);

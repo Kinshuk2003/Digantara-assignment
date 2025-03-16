@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2025-03-16T05:39:29.075Z",
+    "algorithm": "Binary Search",
+    "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+    "output": "2",
+    "status": "Element found",
+    "execution_time_ms": 0.0737
+  },
+  {
+    "id": 2,
+    "timestamp": "2025-03-16T05:43:55.793Z",
+    "algorithm": "Binary Search",
+    "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+    "output": "2",
+    "status": "Element found",
+    "execution_time_ms": 0.0821
+  },
+  {
+    "id": 3,
+    "timestamp": "2025-03-16T05:40:52.053Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.2884
+  },
+  {
+    "id": 4,
+    "timestamp": "2025-03-16T05:44:34.269Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.0624
+  },
+  {
+    "id": 5,
+    "timestamp": "2025-03-16T05:39:31.775Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.2162
+  },
+  {
+    "id": 6,
+    "timestamp": "2025-03-16T05:43:58.094Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.1836
+  },
+  {
+    "id": 7,
+    "timestamp": "2025-03-16T05:40:48.459Z",
+    "algorithm": "Binary Search",
+    "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+    "output": "2",
+    "status": "Element found",
+    "execution_time_ms": 0.1094
+  },
+  {
+    "id": 8,
+    "timestamp": "2025-03-16T05:40:55.437Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.0662
+  },
+  {
+    "id": 9,
+    "timestamp": "2025-03-16T05:39:34.077Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.0772
+  },
+  {
+    "id": 10,
+    "timestamp": "2025-03-16T05:44:02.736Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.1003
+  },
+  {
+    "id": 11,
+    "timestamp": "2025-03-16T05:46:17.855Z",
+    "algorithm": "Binary Search",
+    "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+    "output": "2",
+    "status": "Element found",
+    "execution_time_ms": 0.0788
+  },
+  {
+    "id": 12,
+    "timestamp": "2025-03-16T05:46:20.896Z",
+    "algorithm": "Quick Sort",
+    "input": "[1,3,3,4,5,7,10]",
+    "output": "[1,3,3,4,5,7,10]",
+    "status": "Array sorted successfully",
+    "execution_time_ms": 0.1348
+  },
+  {
+    "id": 13,
+    "timestamp": "2025-03-16T05:46:24.045Z",
+    "algorithm": "Breadth First Search",
+    "input": "{\"input\":[[2,3,1],[0],[0,4],[0],[2]],\"source\":4}",
+    "output": "[4,2,0,3,1]",
+    "status": "traversed Successfully",
+    "execution_time_ms": 0.095
+  }
+]
