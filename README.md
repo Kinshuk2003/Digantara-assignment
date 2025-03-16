@@ -2,6 +2,7 @@
 
 This is a Node.js application that provides APIs for various algorithms like Breadth First Search, Sorting, and Searching. The application logs the algorithm execution details like input, output, status, execution time, etc into a in-memory sqlite database and provides an API to fetch the logs. The logs are saved to a file `logs/logs.json` when the server is stopped and reloaded when the server is started.
 
+A live version of the API is hosted at `http://digantara.centralindia.cloudapp.azure.com`.
 
 ## Setup Guide
 
