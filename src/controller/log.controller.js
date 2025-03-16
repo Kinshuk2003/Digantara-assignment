@@ -3,9 +3,10 @@ import { getLogs } from '../service/log.service.js';
 
 // Controller function to fetch logs based on query parameters
 export const fetchLogs = async (req, res) => {
+    const filter = req.query;
     try {
         // Fetch logs based on query parameters for logs service
-        const logs = await getLogs(req.query);
+        const logs = await getLogs(filter);
 
         return res.status(StatusCodes.OK).json({
              status: "success", 
@@ -14,7 +15,7 @@ export const fetchLogs = async (req, res) => {
     } catch (error) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ 
             status: "error", 
-            message: "Database query failed" 
+            message: ReasonPhrases.INTERNAL_SERVER_ERROR
         });
     }
 }

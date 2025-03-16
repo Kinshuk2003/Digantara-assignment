@@ -1,8 +1,8 @@
 import express from 'express';
 import { PORT } from './config/serverConfig.js';
 import apiRouter from './route/index.js';
-import { memoryDb } from './config/dbConfig.js';
-import fs from 'fs';
+import { writeLogsToFile, loadLogsFromFile } from './service/log.service.js';
+import { sequelize, initializeDatabase } from './config/dbConfig.js';
 
 const app = express();
 
@@ -13,31 +13,23 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api', apiRouter);
 
-// Starting the express server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// Initialize database and start server
+const startServer = async () => {
+    await initializeDatabase();
+    await sequelize.sync({ force: true }); // Synchronize models
+    await loadLogsFromFile(); // Load data from file
 
-// Function to write logs to a file
-const persistLogsToFile = () => {
-    return new Promise((resolve, reject) => {
-        memoryDb.all("SELECT * FROM logs", (err, rows) => {
-            if (err) {
-                console.error("Error fetching logs:", err);
-                reject(err);
-            } else {
-                fs.writeFileSync('logs.json', JSON.stringify(rows, null, 2));
-                console.log("Logs saved to logs.json");
-                resolve();
-            }
-        });
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
     });
 };
+
+startServer();
 
 const shutdown = async () => {
     console.log("Server is shutting down...");
     try {
-        await persistLogsToFile();
+        await writeLogsToFile();
         console.log("Logs Saved on disk Successfully"); 
         // Ensure all processes complete before shutting down
         setTimeout(() => {
