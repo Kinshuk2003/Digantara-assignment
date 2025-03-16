@@ -61,6 +61,8 @@ router.use('/v1', v1Router);
  *                         type: string
  *                       execution_time_ms:
  *                         type: number
+ *       400:
+ *         description: Bad request
  *       500:
  *         description: Internal server error
  */

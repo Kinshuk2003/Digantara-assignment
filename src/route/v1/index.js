@@ -54,7 +54,7 @@ const router = express.Router();
  *                 executionTime:
  *                   type: string
  *       400:
- *         description: Invalid algorithm
+ *         description: Bad request
  *       500:
  *         description: Internal server error
  */
@@ -102,7 +102,7 @@ router.post('/search', validate(searchValidation), searchController);
  *                 executionTime:
  *                   type: string
  *       400:
- *         description: Invalid algorithm
+ *         description: Bad request
  *       500:
  *         description: Internal server error
  */
@@ -150,6 +150,8 @@ router.post('/sort', validate(sortValidation), sortController);
  *                     type: integer
  *                 executionTime:
  *                   type: string
+ *       400:
+ *         description: Bad request
  *       500:
  *         description: Internal server error
  */
