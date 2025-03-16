@@ -31,19 +31,15 @@ const shutdown = async () => {
     try {
         await writeLogsToFile();
         console.log("Logs Saved on disk Successfully"); 
-        // Ensure all processes complete before shutting down
-        setTimeout(() => {
-            process.exit(0);
-        }, 1000);
     } catch (error) {
         console.error("Error during shutdown:", error);
-        // Ensure all processes complete before shutting down
-        setTimeout(() => {
-            process.exit(1);
-        }, 1000);
+    } finally {
+        // Ensure process exits after logs are written
+        process.exit(0); 
     }
 };
 
 // Handling server shutdown gracefully
 process.on('SIGINT', shutdown);
 process.on('SIGTERM', shutdown);
+process.on('exit', shutdown); // Handle unexpected exits

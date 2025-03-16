@@ -1,3 +1,4 @@
+import path from 'path';
 
 // Utility function to Measure the execution time of a function
 export const measureExecutionTime = async (fn, ...args) => {
@@ -8,4 +9,4 @@ export const measureExecutionTime = async (fn, ...args) => {
     return { result, executionTime };
 };
 
-export const LOG_FILE_PATH = 'logs.json';
+export const LOG_FILE_PATH = path.join(process.cwd(), 'logs', 'logs.json');

@@ -1,4 +1,8 @@
 # Digantara Assignment
+
+This is a Node.js application that provides APIs for various algorithms like Breadth First Search, Sorting, and Searching. The application logs the algorithm execution details like input, output, status, execution time, etc into a in-memory sqlite database and provides an API to fetch the logs. The logs are saved to a file `logs/logs.json` when the server is stopped and reloaded when the server is started.
+
+
 ## Setup Guide
 
 ### Prerequisites
@@ -10,8 +14,8 @@
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/digantara.git
-    cd digantara
+    git clone https://github.com/Kinshuk2003/Digantara-assignment.git
+    cd Digantara-assignment
     ```
 
 2. Install dependencies:
@@ -28,13 +32,9 @@
 
 1. Start the server:
     ```sh
-    npm start
+    node src/index.js
     ```
 
-2. For development mode with hot-reloading:
-    ```sh
-    npm run dev
-    ```
 
 3. The server will be running on `http://localhost:3000`.
 
@@ -45,10 +45,17 @@
     docker build -t digantara .
     ```
 
-2. Run the Docker container:
-    ```sh
-    docker run -p 3000:3000 digantara
-    ```
+2. Run the Docker container with volume mapping for logs:
+
+    1. on Linux:
+        ```sh
+        docker run -p 3000:3000 -v $(pwd)/logs:/app/logs --env-file .env digantara
+        ```
+
+    2. on Windows:
+        ```sh
+        docker run -p 3000:3000 -v ${PWD}/logs:/app/logs --env-file .env digantara
+        ```
 
 ## API Documentation
 
@@ -111,6 +118,41 @@
         "executionTime": "0.10 ms"
     }
     ```
+
+#### 4. Logs
+- **URL:** `/api/logs`
+- **Query Parameters:**
+    - `algorithm` (optional): Filter logs by algorithm name
+    - `status` (optional): Filter logs by status
+    - `date` (optional): Filter logs by date (format: `YYYY-MM-DD`)
+- **Method:** `GET`
+
+### Response Format
+```json
+{
+    "status": "success",
+    "logs": [
+        {
+            "id": 1,
+            "timestamp": "2025-03-16T05:39:29.075Z",
+            "algorithm": "Binary Search",
+            "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+            "output": "2",
+            "status": "Element found",
+            "execution_time_ms": 0.0737
+        },
+        {
+            "id": 2,
+            "timestamp": "2025-03-16T05:43:55.793Z",
+            "algorithm": "Binary Search",
+            "input": "{\"input\":[1,2,3,4,5],\"target\":3}",
+            "output": "2",
+            "status": "Element found",
+            "execution_time_ms": 0.0821
+        },
+    ]
+}
+```
 
 ### Validation Errors
 All endpoints validate the input data and return a `400 Bad Request` status with a detailed error message if validation fails.
