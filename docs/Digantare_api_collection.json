@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "fbdaabac-1901-475f-8c60-ccdb08b7b993",
+		"name": "Digantara Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27664325"
+	},
+	"item": [
+		{
+			"name": "V1",
+			"item": [
+				{
+					"name": "search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"algorithm\": \"Binary Search\",\r\n    \"input\": [1, 2, 3, 4, 5],\r\n    \"target\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/search",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sort",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"algorithm\": \"Quick Sort\",\r\n    \"input\": [10, 3, 1, 4, 5, 3, 7]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/sort",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sort"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bfs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"input\": [[2,3,1], [0], [0,4], [0], [2]],\r\n    \"source\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/v1/bfs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bfs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/logs",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"logs"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2025-03-16",
+							"disabled": true
+						},
+						{
+							"key": "algorithm",
+							"value": "Breadth First Search",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "\"Element found\"",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

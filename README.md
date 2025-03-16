@@ -59,6 +59,10 @@ This is a Node.js application that provides APIs for various algorithms like Bre
 
 ## API Documentation
 
+A Swagger UI is available at `http://localhost:3000/api-docs` to test the APIs.
+
+A postman collection is also available in the `docs` directory.
+
 ### Endpoints
 
 #### 1. Breadth First Search

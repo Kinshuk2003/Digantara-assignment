@@ -1,4 +1,5 @@
 import { Log } from '../models/log.model.js';
+import { Op } from 'sequelize';
 
 export const getAllLogs = async () => {
     return await Log.findAll();
@@ -18,7 +19,15 @@ export const insertLog = async (timestamp, algorithm, input, output, status, exe
 export const getLogsByFilter = async (filter) => {
     const where = {};
     if (filter.algorithm) where.algorithm = filter.algorithm;
-    if (filter.date) where.timestamp = filter.date;
+    if (filter.date) {
+        const startDate = new Date(filter.date);
+        const endDate = new Date(filter.date);
+        endDate.setDate(endDate.getDate() + 1);
+        where.timestamp = {
+            [Op.gte]: startDate,
+            [Op.lt]: endDate
+        };
+    }
     if (filter.status) where.status = filter.status;
 
     return await Log.findAll({ where });
