@@ -3,12 +3,16 @@ import { PORT } from './config/serverConfig.js';
 import apiRouter from './route/index.js';
 import { writeLogsToFile, loadLogsFromFile } from './service/log.service.js';
 import { sequelize, initializeDatabase } from './config/dbConfig.js';
+import { swaggerUi, swaggerSpec } from './config/swaggerConfig.js';
 
 const app = express();
 
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Swagger documentation route
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Routes
 app.use('/api', apiRouter);
@@ -21,6 +25,7 @@ const startServer = async () => {
 
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
+        console.log(`Swagger docs available at http://localhost:${PORT}/api-docs`);
     });
 };
 
